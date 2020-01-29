@@ -1,0 +1,40 @@
+$jc: space-between;
+$ai: center;
+$fw: wrap;
+
+@mixin justify($jc, $ai, $fw) {
+  	display: flex;
+	justify-content: $jc;
+	align-items: $ai;
+	flex-wrap: $fw;
+}
+
+.footer {
+	background-color: #242424;
+	&__body {
+		@include justify($jc, $ai, $fw);
+		max-width: 1164px;
+		width: 100%;
+		margin: 0 auto;
+		padding: 36px 20px;
+		p {
+			color: #f7f7f7;
+			font-size: 22px;
+			&:first-child {
+				width: 285px;
+			}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.footer {
+		&__body {
+			justify-content: center;
+			text-align: center;
+			p {
+				margin: 35px;
+			}
+		}
+	}
+}

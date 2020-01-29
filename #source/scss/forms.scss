@@ -1,0 +1,189 @@
+$jc: space-between;
+$ai: center;
+$fw: wrap;
+
+@mixin justify($jc, $ai, $fw) {
+  	display: flex;
+	justify-content: $jc;
+	align-items: $ai;
+	flex-wrap: $fw;
+}
+
+.forms {
+	display: flex;
+	flex: 1 1 auto;
+	position: relative;
+	height: 580px;
+	&__body {
+		@include justify($jc, $ai, $fw);
+		position: relative;
+		z-index: 1;
+		flex: 1 1 auto;
+	}
+	&__block {
+		display: flex;
+		max-width: 1170px;
+		width: 100%;
+		height: 422px;
+		background-color: #1e1e1e;
+		opacity: 0.9;
+		color: #f7f7f7;
+		padding: 35px 50px 25px 100px;
+		a {
+			color: #f7f7f7;
+		}
+		hr {
+			width: 2px;
+			height: 362px;
+			background-color: #ffffff;
+		}
+	}
+	&__contacts {
+		display: flex;
+    	flex-wrap: wrap;
+    	max-width: 258px;
+		width: 100%;
+		margin-right: 210px;
+		h2 {
+		    text-align: left;
+			padding-top: 16px;
+		}
+		p {
+			color: #f7f7f7;
+			font-size: 18px;
+			a {
+				font-size: 30px;
+				font-weight: 700;
+			}
+			&:last-child {
+				font-weight: 700;
+				&:after {
+					content: url('/img/forms/whatsapp.png');
+					position: absolute;
+    				margin: 2px 0 0 10px;
+				}
+			}
+		}
+	}
+	&__contact {
+		align-self: flex-end;
+		padding-bottom: 6px;
+		p {
+			&:first-child {
+				width: 202px;
+			}
+			&:last-child {
+				margin-top: 27px;
+			}
+		}
+	}
+	&__bg {
+		background-image: url('/img/forms/forms.jpg');
+		@extend %img;
+	}
+	&__form {
+		padding: 16px 0 10px 30px;
+		p {
+			&:first-child {
+				font-weight: 700;
+			}
+			&:nth-child(2) {
+				max-width: 427px;
+				width: 100%;
+				margin-top: 15px;
+			}
+		}
+		button {
+			margin-top: -10px;
+			width: 270px;
+			height: 56px;
+		}
+		form {
+			@include justify(space-between, $ai, $fw);
+			margin-top: 18px;
+			width: 520px;
+			input {
+				width: 245px;
+				height: 40px;
+				border: 1px solid #ffffff;
+				background-color: #242424;
+				color: #f7f7f7;
+				font-size: 20px;
+				padding: 15px;
+			}
+			p {
+				padding: 25px 0 17px 0;
+			}
+		}
+	}
+	&__files {
+		@include justify(space-between, $ai, $fw);
+		width: 100%;
+		input[name="address"] {
+			width: 368px;
+		}
+		label {
+			@include justify(flex-end, $ai, nowrap);
+		    width: 152px;
+		    height: 40px;
+		    border: 1px solid #ffffff;
+		    border-left: none;
+		    background-color: #242424;
+		    padding-right: 30px;
+		    cursor: pointer;
+		    &:hover {
+		    	background-color: #111;
+		    }
+		}
+	}
+	#load {
+		visibility: hidden;
+	}
+}
+
+@media (max-width: 1200px) {
+	.forms {
+		&__block {
+			display: grid;
+			height: 100%;
+			padding: 20px;
+			hr {
+				width: 100%;
+			    height: 2px;
+			    transform: rotate(180deg);
+			}
+		}
+		&__form {
+			padding: 0;
+		}
+	}
+}
+@media (max-width: 992px) {}
+@media (max-width: 767px) {
+	.forms {
+		height: 100%;
+		&__form {
+			form, button {
+				width: 100%;
+				input {
+					width: 100%;
+					margin-bottom: 10px;
+				}
+			}
+		}
+		&__contacts {
+			display: grid;
+			max-width: 100%;
+		    margin-right: 0;
+		}
+		&__files {
+			input[name="address"], 
+			label {
+				width: 100%;
+			}
+			label {
+			    border: 1px solid #ffffff;
+			}
+		}
+	}
+}

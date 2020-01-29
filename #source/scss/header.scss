@@ -1,0 +1,85 @@
+$jc: space-between;
+$ai: center;
+$fw: wrap;
+
+@mixin justify($jc, $ai, $fw) {
+  	display: flex;
+	justify-content: $jc;
+	align-items: $ai;
+	flex-wrap: $fw;
+}
+
+.header {
+	box-shadow: 0 1px 9px 1px rgba(228, 228, 228, 0.7);
+	background-color: #ffffff;
+    display: flex;
+	&__body {
+		@include justify(center, $ai, $fw);
+		max-width: 1558px;
+		width: 100%;
+		margin: 23px 157px 12px 205px;
+		font-weight: 700;
+		line-height: 36px;
+		text-transform: uppercase;
+	}
+	&__body, a {
+		color: #000000;
+	}
+	
+	&__menu {
+		@include justify($jc, $ai, $fw);
+		max-width: 758px;
+		width: 100%;
+		font-size: 16px;
+		margin: 0 auto;
+		li {
+			a {
+				&:hover {
+					color: #ff7200;
+				}
+			}
+		}
+		@media (max-width: 991px) {
+			display: none;
+		}
+	}
+	&__phone {
+		@include justify($jc, $ai, $fw);
+		max-width: 436px;
+		width: 100%;
+		p {
+			a {
+				display: flex;
+    			align-items: center;
+				&:before {
+					content: url('/img/header/smartphone-call.png');
+					margin: 10px 13px 0 0;
+				}
+			}
+		}
+		button {
+			width: 218px;
+		}
+	}
+	&__mobile {
+		display: none;
+		@media (max-width: 991px) {
+			@include justify(space-evenly, $ai, $fw);
+			width: 200px;
+    		margin-left: 35px;
+		}
+	}
+}
+@media (max-width: 767px) {
+	.header {
+		height: 100px;
+		&__body {
+			margin: 0 auto;
+			flex-wrap: nowrap;
+			padding: 0 20px;
+		}
+		&__phone {
+			display: none;
+		}
+	}
+}

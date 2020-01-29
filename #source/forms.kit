@@ -1,0 +1,34 @@
+<div class="forms">
+    <div class="forms__body">
+        <div class="container">
+            <div class="forms__block">
+                <div class="forms__contacts">
+                    <h2>ОЦЕНИТЕ СТОИМОСТЬ РЕМОНТА ПРЯМО СЕЙЧАС</h2>
+                    <div class="forms__contact">
+                        <p>Вы можете позвонить нам:
+                            <a href="tel:+79509999999">+7 (950) 999 99 99</a>
+                        </p>
+                        <p>А так же написать WhatsApp</p>
+                    </div>
+                </div>
+                    <hr>
+                <div class="forms__form">
+                    <p>А так же вы можете отправить заявку через сайт:</p>
+                    <p>Загрузите фото области, которая нуждается в ремонте, и мы дадим предварительную оценку уже сегодня!</p>
+                    <form action="#" method="post" enctype="multipart/form-data">
+                        <input type="text" name="name" placeholder="Ваше имя" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ваше имя'" required>
+                        <input type="phone" name="phone" placeholder="Ваш телефон" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ваш телефон'" required>
+                        <p>Загрузите до 5 фото:</p>
+                        <div class="forms__files">
+                            <input type="text" name="address" placeholder="Адрес фото" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Адрес фото'" required>
+                            <label for="load">Загрузить</label>
+                        </div>
+                        <input type="file" name="files[]" accept="image" id="load" multiple accept=".jpg, .jpeg, .png" required>
+                    </form>
+                    <button type="submit">Оценить стоимость</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="forms__bg ibg"></div>
+</div>
